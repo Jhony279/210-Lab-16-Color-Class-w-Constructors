@@ -9,27 +9,33 @@ const int COLOR_AMOUNT = 5;
 class Color{
     private:
     // RGB values range from 0 to 255
-        int red;
-        int green;
-        int blue;
+        double red;
+        double green;
+        double blue;
     public:
     // Default constructor
         Color() { red = 0; green = 0; blue = 0; }
 
-    // Setters and getters for RGB values
-        void setColor(int r, int g, int b){
+    // Partial Parameter Constructor
+        Color(double r) { red = r; green = 0; blue = 0; }
+        Color(double g) { red = 0; green = g; blue = 0; }
+        Color(double b) { red = 0; green = 0; blue = b; }
+
+    // Full Parameter Constructor
+        Color(double r, double g, double b){
             red = r;
             green = g;
             blue = b;
         }
 
-        int getRed(){
+    // Getters for RGB values
+        double getRed(){
             return red;
         }
-        int getGreen(){
+        double getGreen(){
             return green;
         }
-        int getBlue(){
+        double getBlue(){
             return blue;
         }
 
@@ -50,9 +56,9 @@ int main() {
 
     // Generate random colors and store them in the vector
     for (int i = 0; i < COLOR_AMOUNT; i++){
-        int r = rand() % 256;
-        int g = rand() % 256;
-        int b = rand() % 256;
+        double r = rand() % 256;
+        double g = rand() % 256;
+        double b = rand() % 256;
 
         Color c;
         c.setColor(r, g, b);
