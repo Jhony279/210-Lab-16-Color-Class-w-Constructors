@@ -13,6 +13,9 @@ class Color{
         int green;
         int blue;
     public:
+    // Default constructor
+        Color() { red = 0; green = 0; blue = 0; }
+
     // Setters and getters for RGB values
         void setColor(int r, int g, int b){
             red = r;
