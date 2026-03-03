@@ -44,7 +44,7 @@ class Color{
 };
 
 /**
- * @brief The main function generates random colors, stores them in a vector, and 
+ * @brief The main function generates random colors, stores them in a vector, and
  *        displays them.
 */
 int main() {
@@ -57,16 +57,15 @@ int main() {
         double g = rand() % 256;
         double b = rand() % 256;
 
-        if (i%3 == 0){
+        if (i%3 == 0){  // Only modifies the red private member
             Color c(r);
             color.push_back(c);
         }
-        else if (i%3 == 1){
+        else if (i%3 == 1){ // Modifies the red and green private members
             Color c(r, g);
             color.push_back(c);
         }
-        else if (i % 3 == 2)
-        {
+        else if (i % 3 == 2){   // Modifies all three private members
             Color c(r, g, b);
             color.push_back(c);
         }
