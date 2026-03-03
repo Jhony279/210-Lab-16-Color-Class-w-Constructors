@@ -15,12 +15,9 @@ class Color{
     public:
     // Default constructor
         Color() { red = 0; green = 0; blue = 0; }
-
     // Partial Parameter Constructor
         Color(double r) { red = r; green = 0; blue = 0; }
-        Color(double g) { red = 0; green = g; blue = 0; }
-        Color(double b) { red = 0; green = 0; blue = b; }
-
+        Color(double r, double g) { red = r; green = g; blue = 0; }
     // Full Parameter Constructor
         Color(double r, double g, double b){
             red = r;
@@ -60,9 +57,19 @@ int main() {
         double g = rand() % 256;
         double b = rand() % 256;
 
-        Color c;
-        c.setColor(r, g, b);
-        color.push_back(c);
+        if (i%3 == 0){
+            Color c(r);
+            color.push_back(c);
+        }
+        else if (i%3 == 1){
+            Color c(r, g);
+            color.push_back(c);
+        }
+        else if (i % 3 == 2)
+        {
+            Color c(r, g, b);
+            color.push_back(c);
+        }
     }
 
     // Display the generated colors
